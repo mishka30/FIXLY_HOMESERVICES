@@ -1,19 +1,24 @@
+import React, { useState } from 'react';
+import { FaMapMarkerAlt } from "react-icons/fa";
 const links = [
     
 ]
 const stats = [
-  { name: 'Offices worldwide', value: '12' },
-  { name: 'Full-time colleagues', value: '300+' },
-  { name: 'Hours per week', value: '40' },
-  { name: 'Paid time off', value: 'Unlimited' },
+  { name: 'Service', value: '10 Mins' },
+  { name: 'Tracking', value: 'Real-Time' },
+  { name: 'Services', value: 'On-Demand' },
+  { name: 'Booking', value: 'Instant' },
 ]
 
 export default function HeaderSection() {
+  const [location, setLocation] = useState("Kanpur");
+  const [searchQuery, setSearchQuery] = useState("");
+
   return (
-    <div className="relative isolate overflow-hidden bg-gray-900 h-screen w-screen py-24 sm:py-32">
+    <div className="relative isolate overflow-hidden bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 h-80% w-screen py-24 sm:py-32">
       <img
         alt=""
-        src="https://png.pngtree.com/thumb_back/fh260/background/20220523/pngtree-cleaning-service-flat-background-with-group-of-young-women-in-uniform-image_1391520.jpg"
+        src="https://ukcleaningsupplies.co.uk/wp-content/uploads/2023/05/blue-cleaning-supplies-1024x683.webp"
         className="absolute inset-0 -z-10 h-full w-full object-cover object-right md:object-center opacity-50 blur-xs"
       />
       <div
@@ -46,6 +51,44 @@ export default function HeaderSection() {
           <p className="mt-8 text-lg font-medium text-gray-300 sm:text-xl">
           Reliable home services at your doorstep—fast, efficient, and hassle-free.
           </p>
+        </div>
+        <div className="flex -mb-15 justify-center mt-8">
+          <div className="flex items-center bg-white rounded-md shadow-md p-2 w-full max-w-2xl">
+            {/* Location Selector */}
+            <div className="flex items-center px-4">
+              <FaMapMarkerAlt className="text-red-500 mr-2" />
+              <select
+                className="bg-transparent text-gray-700 font-medium focus:outline-none"
+                value={location}
+                onChange={(e) => setLocation(e.target.value)}
+              >
+                <option value="Kanpur">Kanpur</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Mumbai">Mumbai</option>
+                <option value="Bangalore">Bangalore</option>
+              </select>
+            </div>
+
+            {/* Divider */}
+            <div className="border-l border-gray-300 h-6 mx-2"></div>
+
+            {/* Search Input */}
+            <input
+              type="text"
+              placeholder="Search for services..."
+              className="w-full px-2 py-1 focus:outline-none"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+            />
+
+            {/* Search Button */}
+            <button
+              onClick={() => console.log(`Searching for: ${searchQuery} in ${location}`)}
+              className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700"
+            >
+              Search
+            </button>
+          </div>
         </div>
         <div className="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">
           <div className="grid grid-cols-1 gap-x-8 gap-y-6 text-base font-semibold text-white sm:grid-cols-2 md:flex lg:gap-x-10">

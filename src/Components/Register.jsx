@@ -16,12 +16,15 @@ export default function Register() {
             </h2>
           </div>
   
-          <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+          <div className="mt-10 sm:mx-auto sm:w-screen sm:max-w-sm">
             <form action="#" method="POST" className="space-y-6">
               <div>
+              <div className="flex items-center justify-between">
                 <label htmlFor="full-name" className="block text-sm font-medium text-gray-300">
                   Full Name
                 </label>
+              </div>
+                
                 <div className="mt-2">
                   <input
                     id="full-name"
@@ -35,9 +38,11 @@ export default function Register() {
               </div>
   
               <div>
+              <div className="flex items-center justify-between">
                 <label htmlFor="email" className="block text-sm font-medium text-gray-300">
                   Email address
                 </label>
+                </div>
                 <div className="mt-2">
                   <input
                     id="email"
@@ -51,9 +56,11 @@ export default function Register() {
               </div>
   
               <div>
+              <div className="flex items-center justify-between">
                 <label htmlFor="password" className="block text-sm font-medium text-gray-300">
                   Password
                 </label>
+                </div>
                 <div className="mt-2">
                   <input
                     id="password"
@@ -67,9 +74,11 @@ export default function Register() {
               </div>
   
               <div>
+              <div className="flex items-center justify-between">
                 <label htmlFor="confirm-password" className="block text-sm font-medium text-gray-300">
                   Confirm Password
                 </label>
+                </div>
                 <div className="mt-2">
                   <input
                     id="confirm-password"
